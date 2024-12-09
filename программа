@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    double sum = 0.0; // Переменная для хранения суммы
+    std::string input; // Переменная для хранения ввода пользователя
+
+    std::cout << "Введите числа для суммирования (введите 'q' для выхода):" << std::endl;
+
+    while (true) {
+        std::cout << "> "; // Подсказка для ввода
+        std::getline(std::cin, input); // Чтение строки ввода
+
+        // Проверка на выход из программы
+        if (input == "q") {
+            break;
+        }
+
+        try {
+            // Преобразование строки в число
+            double number = std::stod(input);
+            sum += number; // Добавление числа к сумме
+        } catch (const std::invalid_argument&) {
+            std::cout << "Ошибка: введите действительное число или 'q' для выхода." << std::endl;
+        } catch (const std::out_of_range&) {
+            std::cout << "Ошибка: число выходит за пределы допустимого диапазона." << std::endl;
+        }
+    }
+
+    std::cout << "Сумма введенных чисел: " << sum << std::endl; // Вывод суммы
+    return 0;
+}
