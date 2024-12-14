@@ -1,0 +1,22 @@
+#include <iostream>
+
+int main() {
+    double number;
+    double sum = 0.0;
+
+    std::cout << "Введите числа для суммирования (введите 0 для завершения):" << std::endl;
+
+    while (true) {
+        std::cin >> number; // Ввод числа
+
+        if (number == 0) { // Проверка на окончание ввода
+            break;
+        }
+
+        sum += number; // Добавляем число к общей сумме
+    }
+
+    std::cout << "Сумма введенных чисел: " << sum << std::endl;
+
+    return 0;
+}
