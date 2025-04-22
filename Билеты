@@ -1,0 +1,789 @@
+1. Сумма элементов > 10
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {8, 12, 5, 15, 3}, sum = 0;
+    for(int i=0; i<5; i++) if(arr[i]>10) sum += arr[i];
+    cout << sum;
+}
+2. Печать матрицы 8x8
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m[8][8] = {};
+    for(int i=0; i<8; i++) {
+        for(int j=0; j<8; j++) cout << m[i][j] << " ";
+        cout << endl;
+    }
+}
+3. 10-й элемент прогрессии
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    cout << 3 * pow(2, 9);
+}
+4. Месяц по номеру
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string m[12] = {"Янв","Фев","Мар","Апр","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"};
+    int n; cin >> n;
+    cout << m[n-1];
+}
+5. Простые числа
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for(int x=0; x<=28; x++) {
+        int n = 2*x*x + 29;
+        bool prime = true;
+        for(int i=2; i<n; i++) if(n%i==0) prime = false;
+        if(prime) cout << n << " ";
+    }
+}
+6. Числа кратные K
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[15] = {}, K, c=0; cin >> K;
+    for(int i=0; i<15; i++) if(arr[i]%K==0) c++;
+    cout << c;
+}
+7. 20-й элемент прогрессии
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << 4 + 19*3;
+}
+8. НОД через процедуру
+cpp
+#include <iostream>
+using namespace std;
+
+void nod(int a, int b) {
+    while(b) {int t=b; b=a%b; a=t;}
+    cout << a;
+}
+
+int main() {
+    nod(12, 8);
+}
+9. Отрицательные числа
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[13] = {}, c=0;
+    for(int i=0; i<13; i++) if(arr[i]<0) c++;
+    cout << c;
+}
+10. Вычисление функции
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x, y; cin >> x >> y;
+    cout << 2-x - cos(x) + sin(2*x*y);
+}
+11. Рабочие на 'А'
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string n[3] = {"Аня", "Боря", "Антон"};
+    int s[3] = {100, 200, 150};
+    for(int i=0; i<3; i++) if(n[i][0]=='А') cout << n[i] << " " << s[i] << endl;
+}
+12. Дети по месяцу
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string names[3] = {"Саша", "Маша", "Паша"};
+    int months[3] = {5, 3, 5}, age[3] = {6,5,7}, gr;
+    cin >> gr;
+    for(int i=0; i<3; i++) if(months[i]==gr) 
+        cout << names[i] << " " << age[i] << endl;
+}
+13. Произведение чисел в файле
+cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream f("nums.txt");
+    int n=3, p=1, num;
+    while(n--) {cin >> num; f << num << " "; p *= num;}
+    cout << p;
+}
+14. Случайные числа в файл
+cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream f("rand.txt");
+    for(int i=0; i<10; i++) f << rand()%100 << " ";
+}
+15. Вычисление выражения
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x, y; cin >> x >> y;
+    cout << 2-x - cos(x) + sin(2*x*y);
+}
+16. НОД через функцию
+cpp
+#include <iostream>
+using namespace std;
+
+int nod(int a, int b) {
+    while(b) {int t=b; b=a%b; a=t;}
+    return a;
+}
+
+int main() {
+    cout << nod(12, 8);
+}
+17. Объем цилиндра
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float h, r; cin >> h >> r;
+    cout << 3.14 * r * r * h;
+}
+18. Уроки по дням
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int lessons[7] = {5,6,4,5,3,4,0}, d; cin >> d;
+    cout << lessons[d-1];
+}
+19. Вычисление функции
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x; cin >> x;
+    cout << x*x + 2*x + 1;
+}
+20. Вычисление функции (пример)
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x; cin >> x;
+    cout << sin(x) + cos(x);
+}
+21. Замена чисел
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x, y; cin >> x >> y;
+    if(x < y) {x = (x+y)/2; y = 2*x*y;}
+    else {y = (x+y)/2; x = 2*x*y;}
+    cout << x << " " << y;
+}
+22. Возведение в степень
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float a, b, c; cin >> a >> b >> c;
+    a = a>=0 ? a*a : pow(a,4);
+    b = b>=0 ? b*b : pow(b,4);
+    c = c>=0 ? c*c : pow(c,4);
+    cout << a << " " << b << " " << c;
+}
+23. Параметры куба
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a; cin >> a;
+    cout << a*a << " " << 6*a*a << " " << a*a*a;
+}
+24. Максимальный элемент
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {}, max=0;
+    for(int i=0; i<10; i++) if(arr[i]>max) max=arr[i];
+    cout << max;
+}
+25. Генератор простых чисел
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for(int x=1; x<36; x++) {
+        int n = x*x + x + 41;
+        bool prime = true;
+        for(int i=2; i<n; i++) if(n%i==0) prime=false;
+        if(prime) cout << n << " ";
+    }
+}
+26. Произведение элементов
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, p=1; cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++) {cin >> arr[i]; p *= arr[i];}
+    cout << p;
+}
+27. Сумма четных элементов
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {}, sum=0;
+    for(int i=0; i<10; i++) if(arr[i]%2==0) sum+=arr[i];
+    cout << sum;
+}
+28. Нулевые элементы
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1,0,3,0,5};
+    for(int i=0; i<5; i++) if(arr[i]==0) cout << i << " ";
+}
+29. Печать матрицы
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m[6][8] = {};
+    for(int i=0; i<6; i++) {
+        for(int j=0; j<8; j++) cout << m[i][j] << " ";
+        cout << endl;
+    }
+}
+30. Произведение элементов
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {}, p=1;
+    for(int i=0; i<10; i++) p *= arr[i];
+    cout << p;
+}
+31. Сумма отрицательных
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[21] = {}, sum=0;
+    for(int i=0; i<21; i++) if(arr[i]<0) sum+=arr[i];
+    cout << sum;
+}
+32. Нечетные элементы
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[25], c=0;
+    for(int i=0; i<25; i++) {cin >> arr[i]; if(arr[i]%2!=0) c++;}
+    cout << c;
+}
+33. Вычисление суммы (пример)
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum=0; cin >> n;
+    for(int i=1; i<=n; i++) sum += i;
+    cout << sum;
+}
+34. Четные числа в файле
+cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream f("nums.txt");
+    int c=0, num;
+    for(int i=0; i<10; i++) f << rand()%100 << " ";
+    f.close();
+    ifstream in("nums.txt");
+    while(in >> num) if(num%2==0) c++;
+    cout << c;
+}
+Добавь описание к каждой строчке
+Упрощенные решения практических заданий на C++ с пояснениями
+1. Сумма элементов > 10
+cpp
+#include <iostream>  // Подключаем библиотеку для ввода/вывода
+using namespace std; // Используем стандартное пространство имен
+
+int main() {         // Главная функция программы
+    int arr[5] = {8, 12, 5, 15, 3}, sum = 0; // Создаем массив и переменную для суммы
+    for(int i=0; i<5; i++) // Цикл по всем элементам массива
+        if(arr[i]>10) sum += arr[i]; // Если элемент >10, добавляем к сумме
+    cout << sum;     // Выводим результат
+}
+2. Печать матрицы 8x8
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m[8][8] = {}; // Создаем двумерный массив (матрицу) 8x8, заполненный нулями
+    for(int i=0; i<8; i++) { // Цикл по строкам
+        for(int j=0; j<8; j++) // Цикл по столбцам
+            cout << m[i][j] << " "; // Выводим элемент матрицы
+        cout << endl; // Переход на новую строку после каждой строки матрицы
+    }
+}
+3. 10-й элемент геометрической прогрессии
+cpp
+#include <iostream>
+#include <cmath>     // Подключаем библиотеку для математических функций
+using namespace std;
+
+int main() {
+    // Вычисляем 10-й элемент: a10 = a1 * r^(n-1)
+    cout << 3 * pow(2, 9); // 3 - первый элемент, 2 - шаг, 9 = 10-1
+}
+4. Месяц по номеру
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Массив с названиями месяцев
+    string m[12] = {"Янв","Фев","Мар","Апр","Май","Июн",
+                   "Июл","Авг","Сен","Окт","Ноя","Дек"};
+    int n; cin >> n; // Вводим номер месяца
+    cout << m[n-1];  // Выводим название (индекс на 1 меньше номера)
+}
+5. Простые числа по формуле
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for(int x=0; x<=28; x++) { // Цикл по всем x от 0 до 28
+        int n = 2*x*x + 29;    // Вычисляем число по формуле
+        bool prime = true;      // Предполагаем, что число простое
+        for(int i=2; i<n; i++) // Проверяем делители
+            if(n%i==0) prime = false; // Если делится, не простое
+        if(prime) cout << n << " "; // Если простое - выводим
+    }
+}
+6. Числа кратные K
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[15] = {}, K, c=0; // Массив и переменные
+    cin >> K; // Вводим K
+    for(int i=0; i<15; i++) // Цикл по массиву
+        if(arr[i]%K==0) c++; // Если кратно K - увеличиваем счетчик
+    cout << c; // Выводим результат
+}
+7. 20-й элемент арифметической прогрессии
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Формула: an = a1 + d*(n-1)
+    cout << 4 + 19*3; // 4 - первый элемент, 3 - шаг, 19 = 20-1
+}
+8. НОД через процедуру
+cpp
+#include <iostream>
+using namespace std;
+
+void nod(int a, int b) { // Функция вычисления НОД
+    while(b) {           // Алгоритм Евклида
+        int t=b; 
+        b=a%b; 
+        a=t;
+    }
+    cout << a; // Выводим результат
+}
+
+int main() {
+    nod(12, 8); // Вызываем функцию для чисел 12 и 8
+}
+9. Отрицательные числа в массиве
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[13] = {}, c=0; // Массив и счетчик
+    for(int i=0; i<13; i++) // Цикл по массиву
+        if(arr[i]<0) c++;   // Если отрицательное - увеличиваем счетчик
+    cout << c; // Выводим результат
+}
+10. Вычисление функции
+cpp
+#include <iostream>
+#include <cmath> // Для математических функций
+using namespace std;
+
+int main() {
+    float x, y; 
+    cin >> x >> y; // Вводим x и y
+    // Вычисляем значение функции по формуле
+    cout << 2-x - cos(x) + sin(2*x*y);
+}
+11. Рабочие на 'А'
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string n[3] = {"Аня", "Боря", "Антон"}; // Массив имен
+    int s[3] = {100, 200, 150}; // Массив зарплат
+    for(int i=0; i<3; i++) // Цикл по всем рабочим
+        if(n[i][0]=='А') // Если имя начинается на 'А'
+            cout << n[i] << " " << s[i] << endl; // Выводим имя и зарплату
+}
+12. Дети по месяцу рождения
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string names[3] = {"Саша", "Маша", "Паша"}; // Имена детей
+    int months[3] = {5, 3, 5}; // Месяцы рождения
+    int age[3] = {6,5,7}; // Возраст детей
+    int gr; cin >> gr; // Вводим нужный месяц
+    for(int i=0; i<3; i++) 
+        if(months[i]==gr) // Если месяц совпадает
+            cout << names[i] << " " << age[i] << endl; // Выводим информацию
+}
+13. Произведение чисел в файле
+cpp
+#include <iostream>
+#include <fstream> // Для работы с файлами
+using namespace std;
+
+int main() {
+    ofstream f("nums.txt"); // Создаем файл для записи
+    int n=3, p=1, num; // p - произведение
+    while(n--) { // Цикл для n чисел
+        cin >> num; // Вводим число
+        f << num << " "; // Записываем в файл
+        p *= num; // Умножаем на произведение
+    }
+    cout << p; // Выводим результат
+}
+14. Случайные числа в файл
+cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream f("rand.txt"); // Открываем файл для записи
+    for(int i=0; i<10; i++) // Цикл для 10 чисел
+        f << rand()%100 << " "; // Записываем случайное число (0-99)
+}
+15. Вычисление выражения
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x, y; cin >> x >> y; // Вводим x и y
+    // Вычисляем и выводим значение выражения
+    cout << 2-x - cos(x) + sin(2*x*y);
+}
+16. НОД через функцию
+cpp
+#include <iostream>
+using namespace std;
+
+int nod(int a, int b) { // Функция вычисления НОД
+    while(b) {           // Алгоритм Евклида
+        int t=b;
+        b=a%b;
+        a=t;
+    }
+    return a; // Возвращаем результат
+}
+
+int main() {
+    cout << nod(12, 8); // Вызываем функцию и выводим результат
+}
+17. Объем цилиндра
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float h, r; cin >> h >> r; // Вводим высоту и радиус
+    // Вычисляем и выводим объем: V = πr²h
+    cout << 3.14 * r * r * h;
+}
+18. Уроки по дням недели
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int lessons[7] = {5,6,4,5,3,4,0}; // Массив с количеством уроков
+    int d; cin >> d; // Вводим день недели (1-7)
+    cout << lessons[d-1]; // Выводим количество уроков (индекс на 1 меньше)
+}
+19. Вычисление функции (пример)
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x; cin >> x; // Вводим x
+    // Вычисляем и выводим значение функции x² + 2x + 1
+    cout << x*x + 2*x + 1;
+}
+20. Вычисление другой функции
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x; cin >> x; // Вводим x
+    // Вычисляем и выводим значение sin(x) + cos(x)
+    cout << sin(x) + cos(x);
+}
+21. Замена чисел
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x, y; cin >> x >> y; // Вводим два числа
+    if(x < y) { // Если x меньше y
+        x = (x+y)/2; // Меньшее заменяем полусуммой
+        y = 2*x*y;   // Большее - удвоенным произведением
+    }
+    else { // Иначе аналогично
+        y = (x+y)/2;
+        x = 2*x*y;
+    }
+    cout << x << " " << y; // Выводим результат
+}
+22. Возведение в степень
+cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    float a, b, c; cin >> a >> b >> c; // Вводим три числа
+    // Для каждого числа проверяем знак и возводим в соответствующую степень
+    a = a>=0 ? a*a : pow(a,4);
+    b = b>=0 ? b*b : pow(b,4);
+    c = c>=0 ? c*c : pow(c,4);
+    cout << a << " " << b << " " << c; // Выводим результаты
+}
+23. Параметры куба
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a; cin >> a; // Вводим длину ребра
+    // Вычисляем и выводим:
+    cout << a*a << " "  // Площадь грани
+         << 6*a*a << " " // Полная площадь поверхности
+         << a*a*a;      // Объем куба
+}
+24. Максимальный элемент в массиве
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {}, max=0; // Массив и переменная для максимума
+    for(int i=0; i<10; i++) // Цикл по массиву
+        if(arr[i]>max) max=arr[i]; // Если текущий больше max - обновляем
+    cout << max; // Выводим результат
+}
+25. Генератор простых чисел (другая формула)
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for(int x=1; x<36; x++) { // Цикл по x от 1 до 35
+        int n = x*x + x + 41; // Вычисляем число по формуле
+        bool prime = true;    // Предполагаем, что простое
+        for(int i=2; i<n; i++) // Проверяем делители
+            if(n%i==0) prime = false; // Если делится - не простое
+        if(prime) cout << n << " "; // Если простое - выводим
+    }
+}
+26. Произведение элементов массива
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, p=1; cin >> n; // Вводим размер массива
+    int arr[n]; // Создаем массив
+    for(int i=0; i<n; i++) { 
+        cin >> arr[i]; // Вводим элементы
+        p *= arr[i];   // Умножаем на произведение
+    }
+    cout << p; // Выводим результат
+}
+27. Сумма четных элементов
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {}, sum=0; // Массив и сумма
+    for(int i=0; i<10; i++) // Цикл по массиву
+        if(arr[i]%2==0) sum+=arr[i]; // Если четное - добавляем к сумме
+    cout << sum; // Выводим результат
+}
+28. Нулевые элементы
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1,0,3,0,5}; // Массив с нулями
+    for(int i=0; i<5; i++) // Цикл по массиву
+        if(arr[i]==0) cout << i << " "; // Если ноль - выводим индекс
+}
+29. Печать матрицы 6x8
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m[6][8] = {}; // Создаем матрицу 6x8
+    for(int i=0; i<6; i++) { // Цикл по строкам
+        for(int j=0; j<8; j++) // Цикл по столбцам
+            cout << m[i][j] << " "; // Выводим элемент
+        cout << endl; // Переход на новую строку
+    }
+}
+30. Произведение элементов массива
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10] = {}, p=1; // Массив и произведение
+    for(int i=0; i<10; i++) // Цикл по массиву
+        p *= arr[i]; // Умножаем элементы
+    cout << p; // Выводим результат
+}
+31. Сумма отрицательных элементов
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[21] = {}, sum=0; // Массив и сумма
+    for(int i=0; i<21; i++) // Цикл по массиву
+        if(arr[i]<0) sum+=arr[i]; // Если отрицательное - добавляем
+    cout << sum; // Выводим результат
+}
+32. Нечетные элементы
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[25], c=0; // Массив и счетчик
+    for(int i=0; i<25; i++) { 
+        cin >> arr[i]; // Вводим элементы
+        if(arr[i]%2!=0) c++; // Если нечетное - увеличиваем счетчик
+    }
+    cout << c; // Выводим результат
+}
+33. Вычисление суммы (пример)
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum=0; cin >> n; // Вводим n
+    for(int i=1; i<=n; i++) // Цикл от 1 до n
+        sum += i; // Добавляем к сумме
+    cout << sum; // Выводим результат
+}
+34. Четные числа в файле
+cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream f("nums.txt"); // Создаем файл
+    int c=0, num; // Счетчик четных чисел
+    for(int i=0; i<10; i++) // Записываем 10 случайных чисел
+        f << rand()%100 << " ";
+    f.close(); // Закрываем файл
+    
+    ifstream in("nums.txt"); // Открываем для чтения
+    while(in >> num) // Читаем числа из файла
+        if(num%2==0) c++; // Если четное - увеличиваем счетчик
+    cout << c; // Выводим результат
+}
