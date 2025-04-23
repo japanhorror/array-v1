@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;                      // Объявляем переменную
+    cin >> n;                   // Вводим число
+    int sum = n/10 + n%10;      // Сумма цифр
+    if(sum%2)                   // Проверка чётности
+        cout << "Нечетная";     // Если 1 (true)
+    else                        // Иначе
+        cout << "Четная";       // Если 0 (false)
+    return 0;                   // Выход
+}
